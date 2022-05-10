@@ -45,7 +45,6 @@ function getuserinfo() {
         //         localStorage.removeItem('token')
         //         location.href = '../../login.html'
         //     }
-
         // }
     })
 }
