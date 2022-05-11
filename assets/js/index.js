@@ -6,7 +6,6 @@ $(function () {
     //点击退出
     $('#logo_out').on('click', function () {
         // console.log(1111);
-        layer = layui.layer
         layer.confirm('确定退出嘛?', {
             icon: 3,
             title: '提示'
@@ -32,6 +31,7 @@ function getuserinfo() {
         // },
         success(res) {
             console.log(res);
+            layer = layui.layer
             //判断是否请求成功
             if (res.status !== 0) return layui.layer.msg('登录失败')
             layui.layer.msg('登录成功')
@@ -52,8 +52,10 @@ function getuserinfo() {
 //获取用户头像模块
 function getavator(res) {
     //展示用户名
-    let username = res.data.username || res.data.nickname
+    let username = res.data.nickname || res.data.username
+    // console.log(username);
     $('.welcome').html(`欢迎 ${username}`)
+    // $('.welcome').html(`欢迎 ${nickname}`)
     //成功登录后，判断用户是否有头像
     if (res.user_pic == null) {
         //没有头像
