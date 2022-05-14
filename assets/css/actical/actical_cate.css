@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding: 10px;
+    background-color: rgb(241, 236, 236);
+}
+.layui-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#add_actical,
+#edit_actical
+ {
+    padding: 20px;
+    width: 420px;
+}
