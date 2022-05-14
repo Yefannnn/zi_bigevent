@@ -43,7 +43,7 @@ $(function () {
                 layer.msg('获取成功')
                 //通过template引擎渲染到页面
                 let htmlStr = template('actList', res)
-                console.log(htmlStr);
+                // console.log(htmlStr);
                 $('tbody').html(htmlStr)
                 //当列表加载完毕之后，渲染分页，并将筛选中之后的total值传入参数
                 renderPage(res.total)
@@ -123,7 +123,9 @@ $(function () {
     $('tbody').on('click', '.btn_del', function () {
         //点击之后首先拿到这条数据的id 号。通过id 号来发起删除请求，请求结束之后重新渲染页面数据
         let len = $('.btn_del').length
+        console.log(len);
         let id = $(this).attr('data-id')
+        console.log(id);
         layer.confirm('确定要删除吗?', {
             icon: 3,
             title: '提示'
@@ -139,7 +141,9 @@ $(function () {
                     //如果只有一个按钮的时候，并且删除之后没有数据的时候让页码-1 后发起请求
                     if (len == 1) {
                         q.pagenum = q.pagenum == 1 ? 1 : q.pagenum - 1
+                        console.log(q);
                         getactList()
+                        getactcate()
                     }
                 }
             })
